@@ -1,0 +1,2 @@
+c9df6edac6eeebdf2cf9d516cb4b327dea8ae5e246e54ce7144d708c234d5d33  SunoGrab-Setup.exe
+d4a4da3e8b44dbeadd372244ca789c2c17def95ea3bcfb827c59d38942452964  SunoGrab-Portable.zip
