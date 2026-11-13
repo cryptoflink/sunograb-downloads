@@ -8,7 +8,7 @@ Autres liens :
 - [Dernière version et notes](https://github.com/cryptoflink/sunograb-downloads/releases/latest)
 - [Empreintes SHA-256](https://github.com/cryptoflink/sunograb-downloads/releases/latest/download/SHA256SUMS.txt)
 
-Version actuelle : **1.11**. Python et FFmpeg sont inclus.
+Version actuelle : **1.12**. Python et FFmpeg sont inclus.
 
 Installez SunoGrab, puis lancez-le depuis le menu Démarrer. Pour la version
 portable, décompressez le ZIP dans un dossier où vous pouvez écrire et lancez
@@ -21,6 +21,12 @@ utilisateur. Les réglages et téléchargements restent sur votre PC.
 La file se sauvegarde automatiquement. « Pause » laisse finir les titres déjà
 en cours et bloque les suivants ; « Reprendre » poursuit la file. Une pause
 reste active après fermeture et réouverture.
+
+Par défaut, SunoGrab anonymise les métadonnées de chaque titre téléchargé :
+titre, artiste, album, genre et pochette sont remplacés par des valeurs
+neutres, les paroles intégrées sont retirées et la trace d'encodage FFmpeg est
+supprimée, de sorte que les fichiers téléchargés ne révèlent plus leur origine.
+Cette option se règle dans l'interface.
 
 Les fichiers Windows ne sont pas signés numériquement. Les empreintes ci-dessus
 permettent de contrôler leur intégrité. Conservez les notices des composants

@@ -7,8 +7,8 @@ from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED = {
-    'SunoGrab-Setup.exe': 75153265,
-    'SunoGrab-Portable.zip': 103197170,
+    'SunoGrab-Setup.exe': 74593935,
+    'SunoGrab-Portable.zip': 102161529,
 }
 
 
@@ -26,7 +26,10 @@ class ReleaseTests(unittest.TestCase):
         with zipfile.ZipFile(ROOT / 'dist/SunoGrab-Portable.zip') as archive:
             self.assertIsNone(archive.testzip())
             files = [PurePosixPath(name) for name in archive.namelist() if not name.endswith('/')]
-            self.assertEqual(len(files), 134)
+            # 91 fichiers : 1 exe + 84 _internal + 3 bin (ffmpeg+licence+notice) + 3 tutos.
+            # (v1.12 : PyInstaller ne recopie plus les 43 stubs api-set UCRT,
+            #  fournis par le systeme Windows 10/11 ; aucun module reel perdu.)
+            self.assertEqual(len(files), 91)
             self.assertTrue(all(path.parts[0] == 'SunoGrab' for path in files))
             self.assertEqual({path.parts[1] for path in files}, {
                 'SunoGrab.exe', '_internal', 'bin', 'Tutoriel.txt', 'Tutoriel_EN.txt', 'Tutoriel_DE.txt',
